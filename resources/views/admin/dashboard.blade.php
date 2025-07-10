@@ -12,6 +12,12 @@
         margin-top: 10px;
         height: 30px !important;
     }
+
+    .metric-icon {
+        font-size: 1.8rem;
+        margin-right: 10px;
+        opacity: 0.8;
+    }
 </style>
 
 <div class="row">
@@ -19,33 +25,42 @@
         <h2 class="mb-4 text-primary fw-bold">Admin Dashboard</h2>
 
         <div class="row g-3 mb-4">
-            <!-- Total Karyawan (Biru Tua) -->
+            <!-- Total Karyawan -->
             <div class="col-md-4">
                 <div class="card card-metric" style="background-color: #003f88;">
                     <div class="card-body">
-                        <div class="fs-4 fw-bold">{{ $totalKaryawan }}</div>
+                        <div class="d-flex align-items-center mb-2">
+                            <i class="fas fa-users metric-icon"></i>
+                            <div class="fs-4 fw-bold mb-0">{{ $totalKaryawan }}</div>
+                        </div>
                         <div class="small">Total Karyawan</div>
                         <canvas id="chart-karyawan"></canvas>
                     </div>
                 </div>
             </div>
 
-            <!-- Total Absensi (Biru Muda) -->
+            <!-- Total Absensi -->
             <div class="col-md-4">
                 <div class="card card-metric" style="background-color: #2196f3;">
                     <div class="card-body">
-                        <div class="fs-4 fw-bold">{{ $totalAbsensi }}</div>
+                        <div class="d-flex align-items-center mb-2">
+                            <i class="fas fa-calendar-check metric-icon"></i>
+                            <div class="fs-4 fw-bold mb-0">{{ $totalAbsensi }}</div>
+                        </div>
                         <div class="small">Total Absensi</div>
                         <canvas id="chart-absensi-total"></canvas>
                     </div>
                 </div>
             </div>
 
-            <!-- Absen Hari Ini (Kuning) -->
+            <!-- Absen Hari Ini -->
             <div class="col-md-4">
                 <div class="card card-metric" style="background-color: #fcbf1e;">
                     <div class="card-body">
-                        <div class="fs-4 fw-bold">{{ $absenHariIni }}</div>
+                        <div class="d-flex align-items-center mb-2">
+                            <i class="fas fa-user-check metric-icon"></i>
+                            <div class="fs-4 fw-bold mb-0">{{ $absenHariIni }}</div>
+                        </div>
                         <div class="small">Absen Hari Ini</div>
                         <canvas id="chart-absen"></canvas>
                     </div>
@@ -74,6 +89,10 @@
 @endsection
 
 @push('scripts')
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- Chart.js -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
     document.addEventListener('DOMContentLoaded', function () {

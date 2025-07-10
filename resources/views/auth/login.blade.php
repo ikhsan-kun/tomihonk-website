@@ -159,6 +159,7 @@
 
         <div class="text-center">
             <p>Belum punya akun? <a href="{{ route('register') }}">Daftar di sini</a></p>
+            <p>Lupa Password? Hubungi Admin</p>
             @if (Route::has('password.request'))
                 <a href="{{ route('password.request') }}">Lupa password?</a>
             @endif
