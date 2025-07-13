@@ -69,21 +69,21 @@
         </div>
 
         <!-- Menu Admin -->
-        <div class="row">
-            <div class="col-md-6">
-                <div class="card shadow">
-                    <div class="card-body">
-                        <h5 class="mb-3 fw-bold text-primary">Menu Admin</h5>
-                        <a href="{{ route('admin.absensi') }}" class="btn btn-primary d-block mb-2">
-                            Lihat Semua Absensi
-                        </a>
-                        <a href="{{ route('admin.karyawan') }}" class="btn btn-secondary d-block">
-                            Kelola Karyawan
-                        </a>
-                    </div>
+       <div class="row">
+        <div class="col-md-6">
+            <div class="card shadow border-0 rounded-4">
+                <div class="card-body p-4">
+                    <h5 class="mb-4 fw-bold text-primary">🛠️ Menu Admin</h5>
+                   <a href="{{ route('admin.absensi') }}" class="btn btn-primary w-100 d-flex align-items-center justify-content-center gap-2 mb-2 menu-btn">
+                    <i class="bi bi-calendar-check-fill"></i> Lihat Semua Absensi
+                    </a>
+                    <a href="{{ route('admin.karyawan') }}" class="btn btn-outline-secondary w-100 d-flex align-items-center justify-content-center gap-2 menu-btn">
+                        <i class="bi bi-people-fill"></i> Kelola Karyawan
+                    </a>
                 </div>
             </div>
         </div>
+    </div>
     </div>
 </div>
 @endsection

@@ -35,12 +35,11 @@
     </style>
 </head>
 <body>
-
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark navbar-custom shadow-sm sticky-top">
-        <div class="container">
+    <div class="container">
             <a class="navbar-brand fw-bold d-flex align-items-center gap-2" href="{{ url('/') }}">
-            <i class="bi bi-wifi fs-4"></i> <span class="fs-5">TomiHonk</span>
+               <img src="{{ asset('logowifi.png') }}" alt="TomiHonk" style="height: 30px; transform: scale(3.0); transform-origin: left center;">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -49,14 +48,20 @@
                 <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
                     @auth
                         <li class="nav-item">
-                            <span class="text-white small">Halo, {{ Auth::user()->name }}</span>
+                            <div class="d-flex align-items-center gap-2 text-white">
+                                <i class="bi bi-person-circle fs-5"></i>
+                                <div class="d-flex flex-column lh-sm">
+                                    <small class="text-white-50"></small>
+                                    <strong class="text-white">{{ Auth::user()->name }}</strong>
+                                </div>
+                           </div>
                         </li>
                         <li class="nav-item">
                             <form method="POST" action="{{ route('logout') }}" class="d-inline">
-                                @csrf
+                    @csrf
                              <button type="submit" class="btn btn-outline-dark btn-sm bg-white text-dark border-0 shadow-sm">
                                     <i class="bi bi-box-arrow-right"></i> Logout
-                                </button>
+                             </button>
                             </form>
                         </li>
                     @else
@@ -70,7 +75,6 @@
             </div>
         </div>
     </nav>
-
     <!-- Main Content -->
     <div class="container py-4">
         @if(session('success'))
@@ -79,10 +83,8 @@
         @if(session('error'))
             <div class="alert alert-danger">{{ session('error') }}</div>
         @endif
-
         @yield('content')
     </div>
-
     <!-- Bootstrap JS Bundle (dengan Popper.js) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>

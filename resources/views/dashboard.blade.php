@@ -33,23 +33,23 @@
 <div class="row justify-content-center">
     <div class="col-md-10">
         <div class="bg-gradient-blue-orange p-4 mb-4 text-center rounded shadow-sm">
-            <h2 class="fw-bold mb-1">Selamat Datang di Sistem Absensi </h2>
-            <p class="mb-6">PT TomiHonk Network Nusantara</p>
+           <h2 class="fw-bold mb-1">Selamat Datang di Sistem Absensi </h2>
+           <h5 class="text-light fw-semibold mt-2" style="letter-spacing: 1px;">
+                PT Tomihonk Network Nusantara
+           </h5>
         </div>
-
         @if(auth()->user()->isAdmin())
             <div class="alert alert-info text-center">
                 <a href="{{ route('admin.dashboard') }}" class="btn btn-gradient">Masuk ke Admin Panel</a>
             </div>
         @endif
-
         <div class="card card-glow welcome-card text-center">
             <div class="card-body">
-                <h4 class="mb-3">Halo, <strong>{{ auth()->user()->name }}</strong> 👋</h4>
-                <p class="mb-4">Silakan lakukan absensi harian Anda di bawah ini.</p>
-                <div class="d-grid gap-3 d-md-flex justify-content-center">
-                    <a href="{{ route('absensi.create') }}" class="btn btn-gradient btn-lg">📍 Absen Sekarang</a>
-                    <a href="{{ route('absensi.index') }}" class="btn btn-outline-info btn-lg">📅 Riwayat Absensi</a>
+                <h4 class="fw-bold text-dark">Hai, {{ Auth::user()->name }} 👋</h4>
+                <p class="text-muted mb-4">Semoga harimu menyenangkan! Silakan lakukan absensi di bawah ini.</p>
+                <div class="card shadow-lg rounded-4 p-4">
+                <a href="{{ route('absensi.create') }}" class="btn btn-gradient btn-lg mb-3">📍 Absen Sekarang</a>
+                <a href="{{ route('absensi.index') }}" class="btn btn-outline-info btn-lg">📅 Riwayat Absensi</a>
                 </div>
             </div>
         </div>
