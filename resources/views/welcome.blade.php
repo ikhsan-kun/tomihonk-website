@@ -138,20 +138,20 @@
           </p>
 
           @auth
-            <div class="alert alert-success shadow-sm animate__animated animate__fadeInUp animate__delay-3s">
+            <div class="alert alert-success shadow-sm animate__animated animate__fadeInUp animate__delay-1s">
               Selamat datang, <b>{{ auth()->user()->name }}</b>!
             </div>
             @if(auth()->user()->isAdmin())
-              <a href="{{ route('admin.dashboard') }}" class="btn-custom w-100 animate__animated animate__fadeInUp animate__delay-3s">Dashboard Admin</a>
+              <a href="{{ route('admin.dashboard') }}" class="btn-custom w-100 animate__animated animate__fadeInUp animate__delay-2s">Dashboard Admin</a>
             @else
-              <a href="{{ route('dashboard') }}" class="btn-custom w-100 animate__animated animate__fadeInUp animate__delay-3s">Dashboard Karyawan</a>
+              <a href="{{ route('dashboard') }}" class="btn-custom w-100 animate__animated animate__fadeInUp animate__delay-1s">Dashboard Karyawan</a>
             @endif
           @else
             <div class="d-grid gap-2">
-              <div class="animate__animated animate__fadeInUp animate__delay-3s">
+              <div class="animate__animated animate__fadeInUp animate__delay-2s">
                 <a href="{{ route('login') }}" class="btn-custom w-100">Masuk</a>
               </div>
-              <div class="animate__animated animate__fadeInUp animate__delay-4s">
+              <div class="animate__animated animate__fadeInUp animate__delay-1s">
                 <a href="{{ route('register') }}" class="btn-custom w-100">Daftar</a>
               </div>
             </div>

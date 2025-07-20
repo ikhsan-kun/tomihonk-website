@@ -18,6 +18,14 @@
         margin-right: 10px;
         opacity: 0.8;
     }
+
+    .card-admin-menu {
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 30px 20px;
+        border-radius: 12px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
+    }
 </style>
 
 <div class="row">
@@ -68,22 +76,25 @@
             </div>
         </div>
 
-        <!-- Menu Admin -->
-       <div class="row">
-        <div class="col-md-6">
-            <div class="card shadow border-0 rounded-4">
-                <div class="card-body p-4">
-                    <h5 class="mb-4 fw-bold text-primary">🛠️ Menu Admin</h5>
-                   <a href="{{ route('admin.absensi') }}" class="btn btn-primary w-100 d-flex align-items-center justify-content-center gap-2 mb-2 menu-btn">
-                    <i class="bi bi-calendar-check-fill"></i> Lihat Semua Absensi
-                    </a>
-                    <a href="{{ route('admin.karyawan') }}" class="btn btn-outline-secondary w-100 d-flex align-items-center justify-content-center gap-2 menu-btn">
-                        <i class="bi bi-people-fill"></i> Kelola Karyawan
-                    </a>
+        <!-- Menu Admin (dalam card/kotak) -->
+        <div class="row">
+            <div class="col-md-12 d-flex justify-content-center">
+                <div class="card card-admin-menu">
+                    <div class="text-center">
+                        <h5 class="mb-4 fw-bold text-primary">🛠️ Menu Admin</h5>
+
+                        <a href="{{ route('admin.absensi') }}" class="btn btn-primary w-100 d-flex align-items-center justify-content-center gap-2 mb-3 menu-btn">
+                            <i class="bi bi-calendar-check-fill"></i> Lihat Semua Absensi
+                        </a>
+
+                        <a href="{{ route('admin.karyawan') }}" class="btn btn-outline-secondary w-100 d-flex align-items-center justify-content-center gap-2 menu-btn">
+                            <i class="bi bi-people-fill"></i> Kelola Karyawan
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+
     </div>
 </div>
 @endsection
